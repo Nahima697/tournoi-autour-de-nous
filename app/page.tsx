@@ -26,11 +26,21 @@ export default function Home() {
     };
 
     try {
-      // Remplace cette URL par celle générée par ton Google Apps Script ou Make.com
-      await fetch("TON_URL_WEBHOOK_ICI", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+    const GOOGLE_WEBHOOK_URL = process.env.NEXT_PUBLIC_GOOGLE_WEBHOOK_URL;
+
+  if (!GOOGLE_WEBHOOK_URL) {
+    console.error("URL du Webhook manquante");
+    return;
+  }
+
+  await fetch(GOOGLE_WEBHOOK_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify(data),
+  });
 
       alert("Inscription validée ! On a hâte de le voir sur le terrain ⚽");
       (e.target as HTMLFormElement).reset();
