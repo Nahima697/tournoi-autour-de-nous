@@ -27,6 +27,7 @@ export default function Home() {
 
     try {
     const GOOGLE_WEBHOOK_URL = process.env.NEXT_PUBLIC_GOOGLE_WEBHOOK_URL;
+    console.log("Envoi des données au webhook Google Sheets :", data);
 
   if (!GOOGLE_WEBHOOK_URL) {
     console.error("URL du Webhook manquante");
