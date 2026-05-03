@@ -75,6 +75,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-12 bg-zinc-900 border-y border-zinc-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-oswald text-4xl font-black uppercase italic text-givors-red mb-4">Le Tournoi des Quartiers, c'est quoi ?</h2>
+          <p className="text-zinc-400 max-w-3xl mx-auto text-lg leading-relaxed">
+            Un tournoi de foot pour les jeunes de Givors, organisé par l'association O Tours De Nous. Rejoins-nous pour une journée de sport, de fun et de compétition amicale sur le City-Stade !
+             U8 à U13, tous les quartiers sont invités à s'affronter dans une ambiance conviviale et festive.
+             Une buvette  sur place, des lots à gagner et surtout, la fierté de représenter ton quartier !
+             Les fonds collectés serviront à financer les activités de l'association et à faire vivre le quartier.
+              Alors, prêt à faire vibrer le City-Stade ? Inscris-toi vite, les places sont limitées !
+          </p>
+        </div>
+      </section>
+
       {/* SECTION PARTENAIRES */}
       <section className="py-12 bg-zinc-900 border-y border-zinc-800">
         <div className="container mx-auto px-4 flex flex-col items-center">
