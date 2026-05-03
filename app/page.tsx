@@ -43,7 +43,7 @@ export default function Home() {
     body: JSON.stringify(data),
   });
 
-      alert("Inscription validée ! On a hâte de le voir sur le terrain ⚽");
+      alert("Demande d'inscription envoyée !On rien vers toi pour te confirmer ta participation, hâte de le voir sur le terrain ⚽");
       (e.target as HTMLFormElement).reset();
     } catch (error) {
       alert("Erreur lors de l'inscription. Vérifie ta connexion.");
