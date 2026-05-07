@@ -5,7 +5,17 @@ const quartiers = [
   { name: "THOREZ", bg: "bg-givors-blue" },
   { name: "LES PLAINES", bg: "bg-givors-red" },
   { name: "LES VERNES", bg: "bg-givors-yellow" },
-  { name: "BANS", bg: "bg-white" }
+  { name: "BANS", bg: "bg-white" },
+  { name: " AUTRE QUARTIER", bg: "bg-givors-pink" },
+];
+
+const partners = [
+  { name: "Bob's Burger", logo: "/bobs.jpg", url: "https://www.eat-list.fr/givors-69700/restauration-rapide-4/bob-s-burger-207999" },
+  { name: "Ville de Givors", logo: "/logo ville givors.png", url: "https://www.givors.fr/" },
+  { name: "Quartier 2030", logo: "/logo engagement QUARTIER 2030.jpg", url: "https://www.labo-cites.org/territoires/givors" },
+  { name: "LMH", logo: "/logo LMH.png", url: "https://www.lmhabitat.fr/home.html" },
+
+
 ];
 
 export default function Home() {
@@ -119,21 +129,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION PARTENAIRES */}
-      <section id="partners" className="py-12 bg-givors-blue/10 border-y border-zinc-800">
-        <div className="container mx-auto px-4 flex flex-col items-center">
-          <span className="text-givors-blue font-oswald font-bold uppercase tracking-widest text-sm mb-6">Nos Partenaires Officiels</span>
-          <a href="https://www.eat-list.fr/givors-69700/restauration-rapide-4/bob-s-burger-207999" target="_blank" rel="noreferrer" className="group">
-            <div className="bg-white p-2 rounded shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] group-hover:shadow-[8px_8px_0px_0px_rgba(229,37,53,1)] transition-all duration-300">
-              <img 
-                src="/bobs.jpg" 
-                alt="Bob's Burger" 
-                className="w-48 h-auto object-contain transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          </a>
-        </div>
-      </section>
+{/* SECTION PARTENAIRES */}
+{/* SECTION PARTENAIRES */}
+<section
+  id="partners"
+  className="py-12 bg-givors-blue/10 border-y border-zinc-800"
+>
+  <div className="container mx-auto px-4">
+
+    {/* Titre */}
+    <div className="mb-8 text-center">
+      <span className="text-givors-blue font-oswald font-bold uppercase tracking-widest text-sm">
+        Nos Partenaires Officiels
+      </span>
+    </div>
+
+    {/* Logos */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {partners.map((partner) => (
+        <a
+          href={partner.url}
+          target="_blank"
+          rel="noreferrer"
+          key={partner.name}
+          className="group"
+        >
+          <div className="bg-white p-4 rounded h-40 flex items-center justify-center shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] group-hover:shadow-[8px_8px_0px_0px_rgba(229,37,53,1)] transition-all duration-300">
+            <img
+              src={partner.logo}
+              alt={partner.name}
+              className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* SECTION INSCRIPTION + FLYER */}
       <section id="register" className="py-24 bg-gradient-to-b from-zinc-900 to-pitch-dark">
@@ -182,7 +215,7 @@ export default function Home() {
             <div className="w-full lg:w-1/2 flex justify-center pt-8 lg:pt-0">
               <div className="relative group overflow-hidden shadow-[15px_15px_0px_0px_rgba(0,102,204,1)] border-4 border-zinc-900 bg-black">
                 <img 
-                  src="/flyer2.png" 
+                  src="/flyer3.png" 
                   alt="Flyer O Tours de Nous" 
                   className="max-w-full h-auto transition-transform duration-700 group-hover:scale-105 brightness-110 contrast-105 opacity-90 group-hover:opacity-100"
                 />
@@ -202,7 +235,7 @@ export default function Home() {
             <span className="w-2 h-2 bg-givors-yellow rounded-full"></span>
         </div>
         <p className="text-zinc-600 font-oswald uppercase tracking-widest text-sm">
-          © 2026 ASSOCIATION O TOURS DE NOUS - GIVORS
+          © 2026 ASSOCIATION O TOURS DE NOUS - GIVORS - Nahima Toumi
         </p>
       </footer>
     </main>
