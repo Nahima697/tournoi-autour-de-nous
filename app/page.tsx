@@ -14,6 +14,7 @@ const partners = [
   { name: "Ville de Givors", logo: "/logo ville givors.png", url: "https://www.givors.fr/" },
   { name: "Quartier 2030", logo: "/logo engagement QUARTIER 2030.jpg", url: "https://www.labo-cites.org/territoires/givors" },
   { name: "LMH", logo: "/logo LMH.png", url: "https://www.lmhabitat.fr/home.html" },
+  { name: "Intersport", logo: "/logoIntersport.png", url: "https://www.intersport.fr/" },
 
 
 ];
