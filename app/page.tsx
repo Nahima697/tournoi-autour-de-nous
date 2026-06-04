@@ -44,24 +44,38 @@ export default function Home() {
         console.error("URL du Webhook manquante");
         return;
       }
+     
 
-      await fetch(GOOGLE_WEBHOOK_URL, {
+     const response = await fetch(GOOGLE_WEBHOOK_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify(data),
       });
+      const result = await response.json();
 
-      alert("Demande d'inscription envoyée ! On revient vers toi pour te confirmer ta participation, hâte de le voir sur le terrain ⚽");
-      (e.target as HTMLFormElement).reset();
-    } catch (error) {
-      alert("Erreur lors de l'inscription. Vérifie ta connexion.");
-    } finally {
-      setIsSubmitting(false);
+      if (result.status === "full") {
+      alert(
+        "Désolé, cette catégorie est complète pour votre quartier."
+      );
+      return;
     }
-  };
+  if (result.status === "success") {
+    alert(
+      "Demande d'inscription envoyée ! On revient vers toi pour te confirmer ta participation ⚽"
+    );
+    (e.target as HTMLFormElement).reset();
+  }
+      } catch (error) {
+        console.error("Erreur lors de l'envoi des données :", error);
+        alert(
+          "Une erreur est survenue lors de l'envoi de votre inscription. Veuillez réessayer plus tard."
+        );
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
 
   return (
     <main className="selection:bg-givors-red selection:text-white bg-zinc-950 text-white font-sans scroll-smooth">
