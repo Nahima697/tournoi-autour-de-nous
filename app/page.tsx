@@ -230,7 +230,7 @@ export default function Home() {
             <div className="w-full lg:w-1/2 flex justify-center pt-8 lg:pt-0">
               <div className="relative group overflow-hidden shadow-[15px_15px_0px_0px_rgba(0,102,204,1)] border-4 border-zinc-900 bg-black">
                 <img 
-                  src="/affiche.png" 
+                  src="/affiche2.png" 
                   alt="Flyer O Tours de Nous" 
                   className="max-w-full h-auto transition-transform duration-700 group-hover:scale-105 brightness-110 contrast-105 opacity-90 group-hover:opacity-100"
                 />
